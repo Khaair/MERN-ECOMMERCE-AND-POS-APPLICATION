@@ -1,0 +1,284 @@
+html,
+body {
+  color: $themeColor;
+  font-size: $themeFontSize;
+  line-height: $themeLineHeight;
+  font-weight: $fontWeightRegular;
+  padding: 0;
+  margin: 0;
+  font-family: $primaryFont;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.text-start {
+  text-align: start;
+}
+
+p {
+  margin: 0;
+  color: $themeColor;
+  font-size: $themeFontSize;
+  font-family: $primaryFont;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: $primaryFont;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 700;
+  font-family: $primaryFont;
+}
+
+h2 {
+  font-size: 45px;
+  line-height: 58px;
+  font-weight: $fontWeightMediumBold;
+  font-family: $primaryFont;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 36px;
+  font-weight: $fontWeightMediumBold;
+  font-family: $primaryFont;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: $fontWeightMediumBold;
+  font-family: $primaryFont;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: $fontWeightMediumBold;
+  font-family: $primaryFont;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: $fontWeightMediumBold;
+  font-family: $primaryFont;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  outline: none !important;
+  font-family: $primaryFont;
+  text-decoration: none;
+}
+
+a:active,
+a:hover {
+  text-decoration: none;
+  outline: 0 none;
+  font-family: $primaryFont;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+i {
+  font-family: $primaryFont;
+  font-style: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  outline: none;
+}
+.form-control:focus {
+  background-color: $whiteBgColor;
+  outline: 0;
+  box-shadow: none;
+}
+
+input:focus {
+  outline: 0;
+  box-shadow: none;
+  background: none;
+}
+
+textarea:focus {
+  border: 1px solid transparent !important;
+  box-shadow: none;
+  border-radius: 0 !important;
+  outline-color: $primaryTextColor !important;
+}
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
+}
+
+input:disabled {
+  background: #cccccc70 !important;
+}
+
+input {
+  ::placeholder {
+    color: #666;
+  }
+}
+.primary-border-color {
+  border: 1px solid $primaryBorderColor;
+}
+.primary-hr-color {
+  border-top: 1px solid $primaryBorderColor;
+}
+.primary-border-radius {
+  border-radius: $themeRadius;
+}
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+select:disabled {
+  background: #cccccc70 !important;
+}
+.section-padding {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+}
+.dark-bg-color {
+  background-color: $darkBgColor;
+}
+.theme-transparent-bg {
+  background-color: $themeBgColor;
+}
+.form-field-bg {
+  background: $formFieldBg;
+}
+
+.bg-primary {
+  background: rgb(227, 224, 252);
+  background: linear-gradient(
+    318deg,
+    rgba(227, 224, 252, 1) 0%,
+    rgba(246, 246, 246, 1) 65%,
+    rgba(239, 222, 237, 1) 100%
+  );
+}
+
+.bg-secondary {
+  background-color: #f4fcfe;
+}
+.form-field-color {
+  color: $formFieldColor;
+}
+.secondary-border-radius {
+  border-radius: $secondaryRadius;
+}
+.primary-box-shadow {
+  box-shadow: $primaryBoxShadow;
+}
+.primary-card-padding {
+  padding: $primaryCardPadding;
+}
+.secondary-card-padding {
+  padding: $secondaryCardPadding;
+}
+svg {
+  display: inline-block;
+}
+.max-height-table {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+button[disabled] {
+  cursor: no-drop;
+  background: $disabledBtn;
+}
+
+input:-internal-autofill-selected {
+  background-color: rgb(255, 255, 255) !important;
+  background-image: none !important;
+}
+
+input:-webkit-autofill {
+  background-color: rgb(255, 255, 255) !important;
+  background-image: none !important;
+}
+.info-bg-color {
+  background-color: $infoColor;
+}
+.info-text-color {
+  color: $infoColor;
+}
+.border-botton-color {
+  border-bottom: 1px solid #eef2f5;
+}
+.white-bg {
+  background-color: $whiteBgColor;
+}
+
+.white-text {
+  color: $whiteTextColor;
+}
+
+.primary-min-screen {
+  height: 80vh;
+}
+
+.theme-color {
+  color: $themeColor;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+.margin-top-40 {
+  margin-top: 40px;
+}
+.margin-bottom-40 {
+  margin-bottom: 40px;
+}
+

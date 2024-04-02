@@ -1,0 +1,48 @@
+
+table{
+  border: 1px solid #ddd;
+  width: 100%;
+}
+#customers td,
+#customers th {
+  border-bottom: 1px solid #ddd;
+  padding: 13px;
+
+}
+
+
+
+// #customers tr:hover {
+//   background-color: #ddd;
+// }
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #F9FAFB;
+  color: black;
+}
+
+
+.form-wrapper-area {
+  input {
+    background-color: #f1f4f7;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+  }
+ 
+
+  .css-b62m3t-container {
+    width: 220px;
+    .css-13cymwt-control {
+      background-color: #f1f4f7 !important;
+      border: none !important;
+    }
+  }
+}
+
+.ant-btn-primary{
+  background-color: #1677ff !important;
+}

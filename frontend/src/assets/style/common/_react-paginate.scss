@@ -1,0 +1,17 @@
+.react-pagination-wrapper {
+    ul {
+      li {
+        display: inline-block;
+        border: 1px solid #ddd;
+        line-height: 34px;
+        &.active {
+          background: #009688;
+          color: #fff;
+        }
+        a {
+          padding: 6px 10px;
+        }
+      }
+    }
+  }
+  
