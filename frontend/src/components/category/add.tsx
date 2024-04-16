@@ -75,17 +75,10 @@ const Add = ({ fetch }: any) => {
           </div>
         </div>
         <div>
-          {/* <button
-            onClick={showModal}
-            className="bg-[#E8F2FC] px-4 py-2 font-bold text-base text-[#28A0F7] rounded hover:bg-[#0b5394] hover:text-[white] "
-          >
-            Add Category
-          </button> */}
+       
           <MyButton onClick={showModal} children={"Add Category"}  />
 
-          <MyButton onClick={showModal} children={"Add Category"}  bgColor="#FF5733"/>
-          {/* Add Category
-          </MyButton> */}
+         
         </div>
       </div>
       <hr className="mt-2 h-[0.5px]" />

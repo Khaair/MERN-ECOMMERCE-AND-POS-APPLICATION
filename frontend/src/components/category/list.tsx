@@ -14,6 +14,7 @@ import _ from "lodash";
 import { ErrorMessage, Field, Formik } from "formik";
 import { addAdminCategoryHandler } from "../../api/category";
 import * as Yup from "yup";
+import { token } from "../../utils/auth";
 
 const List = ({ data }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,34 +102,25 @@ const List = ({ data }: any) => {
     }
     resetForm(); // Reset the form after submission (optional)
   };
-  const deleteUser = async (id: any) => {
+  const deleteUser = async (id: string) => {
+
+    console.log("delete", id)
     try {
-      const mydata = await axios.delete(`${baseUrl}/delete-user/${id}`);
+      const mydata = await axios.delete(`${baseUrl}/category/delete-category/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       console.log(mydata);
-    } catch (er) {
-      console.log(er);
+    } catch (error) {
+      console.log(error);
     }
   };
 
-  const [api, contextHolder] = notification.useNotification();
 
-  const openNotification = () => {
-    api.open({
-      message: "User updated Successfully!",
-      description: "Now you can find this updated user in user table.",
-      icon: <CheckCircleOutlined style={{ color: "#108ee9" }} />,
-    });
-  };
 
-  const confirm = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e);
-    message.success("User deleted Successfully!");
-    deleteUser(getDelId);
-  };
 
-  const cancel = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e);
-  };
+
 
   const users  = [
     { 'user': 'barney',  'age': 36, 'active': true },
@@ -142,7 +134,6 @@ const List = ({ data }: any) => {
 
   return (
     <>
-      {contextHolder}
       <div className="list-area">
         <div className="grid grid-cols-1">
           <div style={{ overflowX: "auto" }} className="table-area mt-5">
@@ -169,21 +160,9 @@ const List = ({ data }: any) => {
                             >
                               Edit
                             </button>
-
-                            <Popconfirm
-                              className="ant-btn-default"
-                              title="Delete the user!"
-                              description="Are you sure to delete this user?"
-                              onConfirm={confirm}
-                              onCancel={cancel}
-                              onClick={() => setDelId(item?._id)}
-                              okText="Yes"
-                              cancelText="No"
-                            >
-                              <button className="bg-[#E8F2FC] px-4 py-2 font-bold text-base text-[red] rounded hover:bg-[red] hover:text-[white]">
+                            <button onClick={()=>deleteUser(item?._id)} className="bg-[#E8F2FC] px-4 py-2 font-bold text-base text-[red] rounded hover:bg-[red] hover:text-[white]">
                                 Delete
                               </button>
-                            </Popconfirm>
                           </div>
                         </td>
                       </tr>

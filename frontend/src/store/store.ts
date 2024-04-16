@@ -3,18 +3,28 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./slices/authSlice";
+import cartReducer from "./slices/cartSlice";
 
 const authPersistConfig = {
-  key: "root",
+  key: "auth",
   storage,
-  whitelist: ["tokenData", "isAuthenticated"],
+  whitelist: ["tokenData","info","isAuthenticated"],
+};
+
+const cartPersistConfig = {
+  key: "cart",
+  storage,
+  whitelist: ["items"],
 };
 
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+
 
 const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
+    cart: persistedCartReducer,
 
   },
 });

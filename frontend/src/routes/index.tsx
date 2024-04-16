@@ -11,6 +11,7 @@ import UserRoute from "../auth/user-route";
 import ForgotPassword from "../components/forgot-password";
 import POSAPP from "../components/pos";
 import Category from "../pages/admin/category";
+import CartManage from "../pages/admin/cart-manage";
 
 const data = [
   {
@@ -109,7 +110,7 @@ const MainRoutes = () => {
             </PrivateRoute>
           }
         />
-      </Routes>
+      </Routes> 
 
       <Routes>
         <Route
@@ -117,6 +118,17 @@ const MainRoutes = () => {
           element={
             <AdminRoute>
               <Admin />
+            </AdminRoute>
+          }
+        />
+      </Routes>
+
+      <Routes>
+        <Route
+          path="/cart-manage"
+          element={
+            <AdminRoute>
+              <CartManage data={data} />
             </AdminRoute>
           }
         />

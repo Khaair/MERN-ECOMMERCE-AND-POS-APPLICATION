@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TbDeviceImacQuestion } from "react-icons/tb";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import avatar from "../assets/img/avatar.png";
 import storage from "redux-persist/es/storage";
 import { useSelector } from "react-redux";
-import logo from "../assets/img/stlogo.svg"
+import logo from "../assets/img/stlogo.svg";
+import moment from "moment";
 
 const Layout = ({ children }: any) => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -26,6 +27,29 @@ const Layout = ({ children }: any) => {
 
   const tokenData = useSelector((state) => state?.auth?.tokenData);
 
+  const userInfo = useSelector((state) => state?.auth?.info);
+
+  const cartItems = useSelector((state) => state.cart.items);
+
+  console.log("userInfo?.exp", userInfo?.exp);
+
+  useEffect(() => {
+    const expTimestamp = userInfo?.exp;
+    const expDate = moment.unix(expTimestamp);
+
+    const formattedExpDate = expDate.format("MMMM Do YYYY, h:mm:ss a");
+
+    const isExpired = moment().isSameOrAfter(expDate);
+
+    console.log("formattedExpDate", formattedExpDate);
+
+    console.log("isExpired", isExpired);
+
+    if (isExpired) {
+      logout();
+    }
+  }, []);
+
   return (
     <>
       <div className="admin-header shadow-md bg-[white]">
@@ -34,7 +58,6 @@ const Layout = ({ children }: any) => {
             <Link to="/dashboard">
               <div className="flex items-center w-[200px] p-[22px]">
                 <img src={logo} alt="Logo" />
-             
               </div>
             </Link>
 
@@ -47,11 +70,11 @@ const Layout = ({ children }: any) => {
                   <GiHamburgerMenu color="#4D5FAB" size="25px" />
                 </button>
                 <Link to="/pos-app">
-                <button className="ml-[27px] bg-[#E8F2FC] px-4 py-2 font-bold text-base text-[#28A0F7] rounded">
-                 Blog
-                </button>
+                  <button className="ml-[27px] bg-[#E8F2FC] px-4 py-2 font-bold text-base text-[#28A0F7] rounded">
+                    Blog
+                  </button>
                 </Link>
-             
+
                 <button className="ml-[10px] bg-[#E8F2FC] px-4 py-2 font-bold text-base text-[#28A0F7] rounded">
                   USERS
                 </button>
@@ -136,58 +159,65 @@ const Layout = ({ children }: any) => {
                     </svg>
                   </li>
                   <li>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18.08"
-                      height="18.686"
-                      viewBox="0 0 29.428 26.092"
-                    >
-                      <g
-                        id="Group_13021"
-                        data-name="Group 13021"
-                        transform="translate(-1709.2 -44.314)"
-                      >
-                        <g
-                          id="Group_2"
-                          data-name="Group 2"
-                          transform="translate(1709.2 44.314)"
+                    <div className="flex">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18.08"
+                          height="18.686"
+                          viewBox="0 0 29.428 26.092"
                         >
-                          <path
-                            id="cart-svgrepo-com"
-                            d="M5.729,9.175,5.32,6.566H3.854A1.986,1.986,0,0,0,1.962,5,2.03,2.03,0,0,0,0,7.087,2.03,2.03,0,0,0,1.962,9.175,1.987,1.987,0,0,0,3.854,7.609h.635l.245,1.566H4.715L7.251,22.751a2.592,2.592,0,0,0-2.335,2.335A2.721,2.721,0,0,0,5.539,27.1a2.4,2.4,0,0,0,1.818.862h.981a3.044,3.044,0,0,0,2.943,3.131,3.044,3.044,0,0,0,2.943-3.131h5.4a2.948,2.948,0,1,0,5.886,0h1.962a.523.523,0,0,0,0-1.044H25.332a2.883,2.883,0,0,0-5.542,0H14.052a2.963,2.963,0,0,0-2.771-2.087A2.963,2.963,0,0,0,8.51,26.918H7.357A1.438,1.438,0,0,1,6.266,26.4a1.613,1.613,0,0,1-.373-1.209,1.57,1.57,0,0,1,1.556-1.4H26.981a2.531,2.531,0,0,0,2.446-2.6V9.175ZM1.962,8.131a1.046,1.046,0,0,1,0-2.087,1.046,1.046,0,0,1,0,2.087Zm20.6,17.743A2.091,2.091,0,1,1,20.6,27.961,2.03,2.03,0,0,1,22.561,25.874Zm-11.281,0a2.091,2.091,0,0,1,0,4.175,2.091,2.091,0,0,1,0-4.175Zm17.166-4.69a1.516,1.516,0,0,1-1.465,1.559H8.25L5.911,10.218H28.447Z"
-                            transform="translate(0 -5)"
-                            fill="#9c9c9c"
-                          />
-                          <ellipse
-                            id="Ellipse_4"
-                            data-name="Ellipse 4"
-                            cx="2.515"
-                            cy="2.676"
-                            rx="2.515"
-                            ry="2.676"
-                            transform="translate(9.055 20.74)"
-                            fill="#9c9c9c"
-                          />
-                          <ellipse
-                            id="Ellipse_5"
-                            data-name="Ellipse 5"
-                            cx="2.515"
-                            cy="2.676"
-                            rx="2.515"
-                            ry="2.676"
-                            transform="translate(20.121 20.74)"
-                            fill="#9c9c9c"
-                          />
-                        </g>
-                        <path
-                          id="Path_1"
-                          data-name="Path 1"
-                          d="M1996.5,37.356h20.05v8.919s0,1.563-1.988,1.517-16.118,0-16.118,0Z"
-                          transform="translate(-280.186 13.406)"
-                          fill="#e2e2e2"
-                        />
-                      </g>
-                    </svg>
+                          <g
+                            id="Group_13021"
+                            data-name="Group 13021"
+                            transform="translate(-1709.2 -44.314)"
+                          >
+                            <g
+                              id="Group_2"
+                              data-name="Group 2"
+                              transform="translate(1709.2 44.314)"
+                            >
+                              <path
+                                id="cart-svgrepo-com"
+                                d="M5.729,9.175,5.32,6.566H3.854A1.986,1.986,0,0,0,1.962,5,2.03,2.03,0,0,0,0,7.087,2.03,2.03,0,0,0,1.962,9.175,1.987,1.987,0,0,0,3.854,7.609h.635l.245,1.566H4.715L7.251,22.751a2.592,2.592,0,0,0-2.335,2.335A2.721,2.721,0,0,0,5.539,27.1a2.4,2.4,0,0,0,1.818.862h.981a3.044,3.044,0,0,0,2.943,3.131,3.044,3.044,0,0,0,2.943-3.131h5.4a2.948,2.948,0,1,0,5.886,0h1.962a.523.523,0,0,0,0-1.044H25.332a2.883,2.883,0,0,0-5.542,0H14.052a2.963,2.963,0,0,0-2.771-2.087A2.963,2.963,0,0,0,8.51,26.918H7.357A1.438,1.438,0,0,1,6.266,26.4a1.613,1.613,0,0,1-.373-1.209,1.57,1.57,0,0,1,1.556-1.4H26.981a2.531,2.531,0,0,0,2.446-2.6V9.175ZM1.962,8.131a1.046,1.046,0,0,1,0-2.087,1.046,1.046,0,0,1,0,2.087Zm20.6,17.743A2.091,2.091,0,1,1,20.6,27.961,2.03,2.03,0,0,1,22.561,25.874Zm-11.281,0a2.091,2.091,0,0,1,0,4.175,2.091,2.091,0,0,1,0-4.175Zm17.166-4.69a1.516,1.516,0,0,1-1.465,1.559H8.25L5.911,10.218H28.447Z"
+                                transform="translate(0 -5)"
+                                fill="#9c9c9c"
+                              />
+                              <ellipse
+                                id="Ellipse_4"
+                                data-name="Ellipse 4"
+                                cx="2.515"
+                                cy="2.676"
+                                rx="2.515"
+                                ry="2.676"
+                                transform="translate(9.055 20.74)"
+                                fill="#9c9c9c"
+                              />
+                              <ellipse
+                                id="Ellipse_5"
+                                data-name="Ellipse 5"
+                                cx="2.515"
+                                cy="2.676"
+                                rx="2.515"
+                                ry="2.676"
+                                transform="translate(20.121 20.74)"
+                                fill="#9c9c9c"
+                              />
+                            </g>
+                            <path
+                              id="Path_1"
+                              data-name="Path 1"
+                              d="M1996.5,37.356h20.05v8.919s0,1.563-1.988,1.517-16.118,0-16.118,0Z"
+                              transform="translate(-280.186 13.406)"
+                              fill="#e2e2e2"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <div className="mt-[-5px] ml-[5px] text-[red]">
+                        {cartItems?.length}
+                      </div>
+                    </div>
                   </li>
                   <li>
                     <svg
@@ -318,6 +348,12 @@ const Layout = ({ children }: any) => {
                 </Link>
               </MenuItem>
 
+              <MenuItem icon={<TbDeviceImacQuestion />}>
+                <Link to="/cart-manage">
+                  <span>Cart Manage</span>
+                </Link>
+              </MenuItem>
+
               <SubMenu label="Category" icon={<TbDeviceImacQuestion />}>
                 <MenuItem>
                   <Link to="/category">All category</Link>
@@ -347,8 +383,6 @@ const Layout = ({ children }: any) => {
             </Menu>
           </Sidebar>
         )}
-
-        
 
         {tokenData?.role === "user" && (
           <Sidebar collapsed={!isExpanded}>
