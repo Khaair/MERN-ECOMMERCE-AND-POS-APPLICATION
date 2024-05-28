@@ -1,3 +1,4 @@
+'use strict';
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -7,9 +8,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
+
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/mern-ecommerce-a2", {
+// mongodb://localhost:27017/mern-ecommerce-a2
+
+mongoose.connect("mongodb+srv://khaircseiu:n1JXHzaQa1YxUwij@cluster0.gkfcnxd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
