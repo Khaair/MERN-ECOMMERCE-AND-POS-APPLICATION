@@ -3,14 +3,11 @@ import { Dialog, Disclosure, Popover } from "@headlessui/react";
 import {
   AlignRightOutlined,
   ArrowRightOutlined,
-  
   AppstoreOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../../assets/images/logo-dhaka-shop.png";
-
-
 
 const buttonWidth = 70;
 const gap = 8;
@@ -88,13 +85,14 @@ export default function Menu() {
           <div>
             <header>
               <nav
-                className="mx-auto flex items-center py-1 justify-between"
+                className="mx-auto flex items-center py-2 justify-between"
                 aria-label="Global"
               >
-                <div className="flex lg:flex-1">
-                <div className="flex items-center w-[200px] py-[16px]">
-                <Image src={logo} alt="Logo" />
-              </div>
+                <div className="flex items-center">
+                  
+                  <div className="ml-3 ">
+                    <Image height={80}  src={logo} alt="Logo" />
+                  </div>
                 </div>
                 <div className="flex lg:hidden">
                   <button
@@ -112,51 +110,47 @@ export default function Menu() {
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
                   <Link
                     href="/"
-                    className="text-base font-semibold text-[black] leading-6 hover:text-[#06BBCC]"
+                    className="text-lg font-bold primary-color leading-6 hover:text-[#147700]"
                   >
                     Home
                   </Link>
                   <Link
-                      href="/about-us"
-                      className="text-base text-[black] font-semibold leading-6  hover:text-[#06BBCC]"
-                    >
-                      About us
-                      
-                    </Link>
+                    href="/about-us"
+                    className="text-lg primary-color font-bold leading-6  hover:text-[#147700]"
+                  >
+                    About us
+                  </Link>
 
-                    
-
-                   
                   <Link
                     href="/contact"
-                    className="text-base text-[black] font-semibold leading-6  hover:text-[#06BBCC]"
+                    className="text-lg primary-color font-bold leading-6  hover:text-[#147700]"
                   >
                     Contact us
                   </Link>
                   <Link
                     href="/notices"
                     {...btnProps}
-                    className="text-base text-[black] font-semibold leading-6  hover:text-[#06BBCC]"
+                    className="text-lg primary-color font-bold leading-6  hover:text-[#147700]"
                   >
                     Categories
                   </Link>
                   <Link
                     href="/notices"
                     {...btnProps}
-                    className="text-base text-[black] font-semibold leading-6  hover:text-[#06BBCC]"
+                    className="text-lg primary-color font-bold leading-6  hover:text-[#147700]"
                   >
                     Offers
                   </Link>
                   {userData ? (
                     <Link
-                      className="text-base text-[black] font-semibold leading-6  hover:text-[#06BBCC]"
+                      className="text-lg primary-color font-bold leading-6  hover:text-[#147700]"
                       href="/student-profile"
                     >
                       profile
                     </Link>
                   ) : (
                     <Link
-                      className="text-base text-[black] font-semibold leading-6  hover:text-[#06BBCC]"
+                      className="text-lg primary-color font-bold leading-6  hover:text-[#147700]"
                       href="/user-auth"
                     >
                       Log in

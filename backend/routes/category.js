@@ -10,7 +10,7 @@ const {
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 
-router.get("/show-categories", isLoggedIn, showCategories);
+router.get("/show-categories", showCategories);
 
 router.post(
   "/add-category",

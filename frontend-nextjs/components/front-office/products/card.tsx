@@ -10,7 +10,7 @@ const Card = () => {
         <Image  width={0} height={0} src={selfTestLogo} alt="image"/>
         </div>
         <div>
-            <h3>Category name</h3>
+            <h3 className='text-base'>Category name</h3>
         </div>
     </div>
   )

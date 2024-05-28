@@ -21,11 +21,10 @@ const HomeContainer = () => {
     if (true) {
       await setallCategories({ loading: true, data: null });
       await fetchAdminBlogListHandler().then((res) => {
-        console.log("ressss", res);
         if (res?.status === 200) {
           setallCategories({
             loading: false,
-            data: res?.data,
+            data: res?.data?.data,
           });
         } else {
           setallCategories({
@@ -40,10 +39,11 @@ const HomeContainer = () => {
     fetchBlogs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchBlogs]);
+
   return (
     <Layout>
       <CarouselEx />
-      <CategoriesContainer getallCategories={getallCategories}/>
+      <CategoriesContainer getallCategories={getallCategories} />
       {getallCategories?.data?.map((item: any, index: any) => {
         return (
           <div key={index}>

@@ -3,7 +3,7 @@ import axios from "axios";
 // fetch all blogs
 export const fetchAdminBlogListHandler = async () => {
   const res = await axios.get(
-    `${baseUrl}/todo`,
+    `${baseUrl}/category/show-categories`,
   
   );
   return res;

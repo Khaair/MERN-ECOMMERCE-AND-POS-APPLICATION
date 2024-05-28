@@ -285,7 +285,7 @@ const Layout = ({ children }: any) => {
             <Menu>
               <MenuItem
                 component={<Link href="/dashboard">Dashboard</Link>}
-                active={window.location.pathname === "/"}
+             
                 icon={
                   <svg
                     id="Group_1"
@@ -385,7 +385,7 @@ const Layout = ({ children }: any) => {
             <Menu>
               <MenuItem
                 component={<Link href="/dashboard">Dashboard</Link>}
-                active={window.location.pathname === "/"}
+              
                 icon={
                   <svg
                     id="Group_1"

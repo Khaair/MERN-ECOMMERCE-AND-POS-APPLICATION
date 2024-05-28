@@ -1,15 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-html,
-body {
-
-    font-family: "Roboto", sans-serif;
-}
-
 /* admin start */
 .admin-header {
     position: fixed;
@@ -24,14 +12,17 @@ body {
     z-index: 100;
     padding-right: 15px;
   }
+  
   .admin-header .top-header-container {
     width: 100%;
   }
+  
   .admin-header .top-header-container .top-header-inner-content {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .admin-header-logo h3 {
     background-color: #fff;
     padding: 10px;
@@ -41,35 +32,43 @@ body {
     text-align: center;
     font-weight: 900;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .humberger-menu-icon button {
     border: none;
     cursor: pointer;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul li {
     display: inline-block;
     margin-right: 20px;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul li svg {
     height: 22px !important;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul li:last-child {
     margin-right: 0;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul li .search-optin {
     position: relative;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul li .search-optin .search-field input {
     padding: 6px 10px;
     border-radius: 4px;
     background: #d2ebe8;
     color: #000;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul li .search-optin .search-button {
     position: absolute;
     transform: translateY(-50%);
@@ -77,12 +76,14 @@ body {
     right: 10px;
     top: 50%;
   }
+  
   .admin-header .top-header-container .top-header-inner-content .top-header-right-sidebar .top-header-action ul .avatar {
     background: #e5e0e0;
     height: 40px;
     width: 40px;
     border-radius: 100%;
   }
+  
   .admin-sidebar .ps-sidebar-root {
     background-color: #222d32;
     height: 100vh;
@@ -92,51 +93,65 @@ body {
     margin-top: 55px;
     border: none;
   }
+  
   .admin-sidebar .ps-menu-button:hover {
     background-color: #cfcfcf !important;
   }
+  
   .admin-sidebar .menu-title {
     margin-left: 22px !important;
     color: #b1b1b1;
     font-size: 16px;
   }
+  
   .admin-sidebar .css-dip3t8 {
     background-color: #fff !important;
   }
+  
   .admin-sidebar .css-wx7wi4 {
     color: black !important;
   }
+  
   .admin-sidebar .ps-menuitem-root {
     color: #fff;
   }
+  
   .admin-sidebar .ps-menuitem-root a:hover {
     color: #fff;
   }
+  
   .admin-sidebar .ps-submenu-root {
     color: #111010;
   }
-  .admin-sidebar .css-16jesut > .ps-menu-button:hover {
+  
+  .admin-sidebar .css-16jesut>.ps-menu-button:hover {
     background-color: #515455;
     color: black;
   }
+  
   .admin-sidebar .ps-submenu-content {
     background-color: #fff !important;
   }
+  
   .admin-sidebar .ps-submenu-content:hover {
     background-color: #b6c0c4 !important;
   }
-  .admin-sidebar .css-1tqrhto > .ps-menu-button:hover {
+  
+  .admin-sidebar .css-1tqrhto>.ps-menu-button:hover {
     background-color: #505050 !important;
   }
+  
   .admin-sidebar .ps-submenu-content .ps-menuitem-root .ps-menu-button {
     height: inherit !important;
     padding-top: 6px !important;
     padding-bottom: 6px !important;
   }
+  
   .admin-sidebar .ps-submenu-content .ps-menu-label {
     position: relative;
     padding-left: 27px;
   }
+  
   .admin-sidebar .ps-submenu-content .ps-menu-label:before {
     content: "";
     position: absolute;
@@ -148,6 +163,7 @@ body {
     border-radius: 50%;
     background-color: #28a0f7;
   }
+  
   .admin-sidebar .teletalk-logo-content {
     display: flex;
     align-items: center;
@@ -157,6 +173,7 @@ body {
     padding: 30px 20px;
     transition: all 0.3s linear;
   }
+  
   .admin-sidebar .teletalk-logo-content .logo {
     height: 50px;
     width: 50px;
@@ -164,11 +181,13 @@ body {
     margin-right: 18px;
     transition: all 0.3s linear;
   }
+  
   .admin-sidebar .teletalk-logo-content .logo img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
   }
+  
   .admin-sidebar .teletalk-logo-content .short-logo {
     height: 30px;
     width: 30px;
@@ -176,34 +195,42 @@ body {
     flex-shrink: 0;
     transition: all 0.3s linear;
   }
+  
   .admin-sidebar .teletalk-logo-content .short-logo img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
   }
+  
   .admin-sidebar .teletalk-logo-content .text-content {
     transition: all 0.3s linear;
   }
+  
   .admin-sidebar .teletalk-logo-content .text-content span {
     display: inline-block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
   }
-  .css-1654oxy > .ps-menu-button:hover {
+  
+  .css-1654oxy>.ps-menu-button:hover {
     background-color: #efefef !important;
   }
+  
   .svg-bold {
     font-size: 25px;
     fill: #fff;
   }
+  
   .svg-semi-bold {
     font-size: 20px;
     fill: #fff;
   }
+  
   .ps-sidebar-container::-webkit-scrollbar {
     display: none !important;
   }
+  
   .admin-main-content {
     margin-left: 250px;
     background-color: #eff2f4;
@@ -211,6 +238,7 @@ body {
     transition: all 0.3s linear;
     padding: 10px 10px 10px 10px;
   }
+  
   .short-admin-main-content {
     margin-left: 79px;
     background-color: #eff2f4;
@@ -218,12 +246,15 @@ body {
     transition: all 0.3s linear;
     padding: 30px 15px;
   }
+  
   .admin-container {
     padding: 0 15px;
   }
+  
   .admin-sidebar .ps-menu-root {
     margin-top: 30px;
   }
+  
   .admin-sidebar .ps-menu-root ul li a {
     display: flex;
     width: 100%;
@@ -231,35 +262,3 @@ body {
   }
   
   /* admin end */
-
-  .min-screen-height {
-    min-height: 85vh;
-}
-
-.carosol-bg-one{
-background-image: url("https://i.ibb.co/27q4Q3x/pexels-tu-n-ki-t-jr-1308881.jpg");
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-}
-
-
-.carosol-bg-two{
-  background-image: url("https://i.ibb.co/djhMr46/7d2fe3e4-0b36-4d0c-9fd2-8df024098b77.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  }
-
-  .carosol-bg-three{
-    background-image: url("https://paikaree.com.bd/public/uploads/subsubcategories/banner/ySOrcUk3fdAaU1I48qwOGFr3B7YmVfislnUn1CEZ.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
-
-
-
-
-
-    
