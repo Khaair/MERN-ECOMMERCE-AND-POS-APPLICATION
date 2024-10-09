@@ -5,36 +5,35 @@ const {
   addCategory,
   updateCategory,
   deleteCategory,
-} = require("../controllers/category-controller.js");
+} = require("../controllers/sub-category-controller");
 
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 
-router.get("/show-categories", showCategories);
+router.get("/show-sub-category", showCategories);
 
 router.post(
-  "/add-category",
+  "/add-sub-category",
   [
     check("name").notEmpty().withMessage("Name is required"),
     check("url").notEmpty().withMessage("url is required"),
+    check("category").notEmpty().withMessage("Category is required"),
 
   ],
-  isLoggedIn,
   addCategory
 );
 
 router.put(
-  "/update-category/:id",
-
+  "/update-sub-category/:id",
   [
     check("name").notEmpty().withMessage("Name is required"),
     check("url").notEmpty().withMessage("url is required"),
+    check("category").notEmpty().withMessage("Category is required"),
 
   ],
-  isLoggedIn,
   updateCategory
 );
 
-router.delete("/delete-category/:id", isLoggedIn, deleteCategory);
+router.delete("/delete-sub-category/:id", deleteCategory);
 
 module.exports = router;

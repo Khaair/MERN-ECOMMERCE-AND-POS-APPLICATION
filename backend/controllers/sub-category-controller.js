@@ -1,4 +1,4 @@
-const categoryModel = require("../models/category");
+const categoryModel = require("../models/sub-category");
 const { validationResult } = require("express-validator");
 
 const showCategories = async (req, res) => {
@@ -62,7 +62,7 @@ const updateCategory = async (req, res) => {
     } else {
       updateData.name = req.body.name;
       updateData.url = req.body.url;
-
+      updateData.category = req.body.category;
       await updateData.save();
 
       res

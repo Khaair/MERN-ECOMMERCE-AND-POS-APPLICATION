@@ -3,7 +3,11 @@ import Layout from '../admin-layout'
 
 const DashboardContainer = () => {
   return (
-    <Layout>DashboardContainer</Layout>
+    <Layout>
+      <div className="primary-box-shadow bg-[white] min-screen-height">
+        hiii
+      </div>
+    </Layout>
   )
 }
 

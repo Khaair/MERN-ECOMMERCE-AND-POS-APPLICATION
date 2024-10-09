@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
   name: { type: String, required: true },
-  description: { type: String },
+  url: { type: String, required: true },
 });
 
 const Category = mongoose.model("category", categorySchema);

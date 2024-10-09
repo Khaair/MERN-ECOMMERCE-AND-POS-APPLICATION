@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -18,40 +18,36 @@ const Layout = ({ children }: any) => {
     setIsExpanded(!isExpanded);
   }
 
-//   const logout = async () => {
-//     try {
-//       storage.removeItem("persist:auth");
-//       sessionStorage.removeItem("persist:auth");
-//       window.location.href = "/login";
-//     } catch (e) {
-//       console.error(e);
-//     }
-//   };
+  //   const logout = async () => {
+  //     try {
+  //       storage.removeItem("persist:auth");
+  //       sessionStorage.removeItem("persist:auth");
+  //       window.location.href = "/login";
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   };
 
-//   const tokenData = useSelector((state) => state?.auth?.tokenData);
+  //   const tokenData = useSelector((state) => state?.auth?.tokenData);
 
-//   const userInfo = useSelector((state) => state?.auth?.info);
+  //   const userInfo = useSelector((state) => state?.auth?.info);
 
-//   const cartItems = useSelector((state) => state.cart.items);
+  //   const cartItems = useSelector((state) => state.cart.items);
 
+  //   useEffect(() => {
+  //     const expTimestamp = userInfo?.exp;
+  //     const expDate = moment.unix(expTimestamp);
 
-//   useEffect(() => {
-//     const expTimestamp = userInfo?.exp;
-//     const expDate = moment.unix(expTimestamp);
+  //     const isExpired = moment().isSameOrAfter(expDate);
 
-
-//     const isExpired = moment().isSameOrAfter(expDate);
-
-
-
-//     if (isExpired) {
-//       logout();
-//     }
-//   }, []);
+  //     if (isExpired) {
+  //       logout();
+  //     }
+  //   }, []);
 
   return (
     <>
-      <div className="admin-header shadow-md bg-[white]">
+      <div className="admin-header bg-[white]">
         <div className="top-header-container">
           <div className="top-header-inner-content">
             <Link href="/dashboard">
@@ -281,182 +277,90 @@ const Layout = ({ children }: any) => {
         </div>
       </div>
       <div className="admin-sidebar">
-      <Sidebar collapsed={!isExpanded}>
-            <Menu>
-              <MenuItem
-                component={<Link href="/dashboard">Dashboard</Link>}
-             
-                icon={
-                  <svg
-                    id="Group_1"
-                    data-name="Group 1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16.594"
-                    height="16.168"
-                    viewBox="0 0 24.594 26.168"
-                  >
-                    <rect
-                      id="Rectangle_6"
-                      data-name="Rectangle 6"
-                      width="10.356"
-                      height="12.395"
-                      rx="1"
-                      transform="translate(0)"
-                      fill="#28A0F7"
-                    />
-                    <rect
-                      id="Rectangle_9"
-                      data-name="Rectangle 9"
-                      width="10.356"
-                      height="11.018"
-                      rx="1"
-                      transform="translate(0 15.15)"
-                      fill="#e6e6e6"
-                    />
-                    <rect
-                      id="Rectangle_7"
-                      data-name="Rectangle 7"
-                      width="11.65"
-                      height="12.395"
-                      rx="1"
-                      transform="translate(12.944)"
-                      fill="#e6e6e6"
-                    />
-                    <rect
-                      id="Rectangle_8"
-                      data-name="Rectangle 8"
-                      width="11.65"
-                      height="11.018"
-                      rx="1"
-                      transform="translate(12.944 15.15)"
-                      fill="#e6e6e6"
-                    />
-                  </svg>
-                }
-              >
-                <Link href="/dashboard">
-                  {" "}
-                  <span className="text-[#28A0F7] font-bold">Dashboard</span>
-                </Link>
+        <Sidebar collapsed={!isExpanded}>
+          <Menu>
+            <MenuItem
+              component={<Link href="/dashboard">Dashboard</Link>}
+              icon={
+                <svg
+                  id="Group_1"
+                  data-name="Group 1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16.594"
+                  height="16.168"
+                  viewBox="0 0 24.594 26.168"
+                >
+                  <rect
+                    id="Rectangle_6"
+                    data-name="Rectangle 6"
+                    width="10.356"
+                    height="12.395"
+                    rx="1"
+                    transform="translate(0)"
+                    fill="#28A0F7"
+                  />
+                  <rect
+                    id="Rectangle_9"
+                    data-name="Rectangle 9"
+                    width="10.356"
+                    height="11.018"
+                    rx="1"
+                    transform="translate(0 15.15)"
+                    fill="#e6e6e6"
+                  />
+                  <rect
+                    id="Rectangle_7"
+                    data-name="Rectangle 7"
+                    width="11.65"
+                    height="12.395"
+                    rx="1"
+                    transform="translate(12.944)"
+                    fill="#e6e6e6"
+                  />
+                  <rect
+                    id="Rectangle_8"
+                    data-name="Rectangle 8"
+                    width="11.65"
+                    height="11.018"
+                    rx="1"
+                    transform="translate(12.944 15.15)"
+                    fill="#e6e6e6"
+                  />
+                </svg>
+              }
+            >
+              <Link href="/dashboard">
+                <span className="text-[#28A0F7] font-bold">Dashboard</span>
+              </Link>
+            </MenuItem>
+
+            <SubMenu label="Category" icon={<TbDeviceImacQuestion />}>
+              <MenuItem>
+                <Link href="/admin/category">Category</Link>
               </MenuItem>
-
-              <MenuItem icon={<TbDeviceImacQuestion />}>
-                <Link href="/admin">
-                  <span>Admin</span>
-                </Link>
+              <MenuItem>
+                <Link href="/add-user">Sub Category</Link>
               </MenuItem>
-
-              <MenuItem icon={<TbDeviceImacQuestion />}>
-                <Link href="/cart-manage">
-                  <span>Cart Manage</span>
-                </Link>
+            </SubMenu>
+            <SubMenu label="Product" icon={<TbDeviceImacQuestion />}>
+              <MenuItem>
+                <Link href="/add-user">Product list</Link>
               </MenuItem>
+            </SubMenu>
 
-              <SubMenu label="Category" icon={<TbDeviceImacQuestion />}>
-                <MenuItem>
-                  <Link href="/category">All category</Link>
-                </MenuItem>
-              </SubMenu>
-              {/* <SubMenu label="Products" icon={<TbDeviceImacQuestion />}>
-                <MenuItem>
-                  <Link to="/add-user">All products</Link>
-                </MenuItem>
-              </SubMenu>
-              <SubMenu label="Orders" icon={<TbDeviceImacQuestion />}>
-                <MenuItem>
-                  <Link to="/add-user">All orders</Link>
-                </MenuItem>
-              </SubMenu>
-              <SubMenu label="Users" icon={<TbDeviceImacQuestion />}>
-                <MenuItem>
-                  <Link to="/add-user">All users</Link>
-                </MenuItem>
-              </SubMenu> */}
-
-              <SubMenu
-                // onClick={() => logout()}
-                label="Log out"
-                icon={<TbDeviceImacQuestion />}
-              ></SubMenu>
-            </Menu>
-          </Sidebar>
-
-          <Sidebar collapsed={!isExpanded}>
-            <Menu>
-              <MenuItem
-                component={<Link href="/dashboard">Dashboard</Link>}
-              
-                icon={
-                  <svg
-                    id="Group_1"
-                    data-name="Group 1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16.594"
-                    height="16.168"
-                    viewBox="0 0 24.594 26.168"
-                  >
-                    <rect
-                      id="Rectangle_6"
-                      data-name="Rectangle 6"
-                      width="10.356"
-                      height="12.395"
-                      rx="1"
-                      transform="translate(0)"
-                      fill="#28A0F7"
-                    />
-                    <rect
-                      id="Rectangle_9"
-                      data-name="Rectangle 9"
-                      width="10.356"
-                      height="11.018"
-                      rx="1"
-                      transform="translate(0 15.15)"
-                      fill="#e6e6e6"
-                    />
-                    <rect
-                      id="Rectangle_7"
-                      data-name="Rectangle 7"
-                      width="11.65"
-                      height="12.395"
-                      rx="1"
-                      transform="translate(12.944)"
-                      fill="#e6e6e6"
-                    />
-                    <rect
-                      id="Rectangle_8"
-                      data-name="Rectangle 8"
-                      width="11.65"
-                      height="11.018"
-                      rx="1"
-                      transform="translate(12.944 15.15)"
-                      fill="#e6e6e6"
-                    />
-                  </svg>
-                }
-              >
-                <Link href="/dashboard">
-                  {" "}
-                  <span className="text-[#28A0F7] font-bold">Dashboard</span>
-                </Link>
+            <SubMenu label="Order" icon={<TbDeviceImacQuestion />}>
+              <MenuItem>
+                <Link href="/add-user">Order list</Link>
               </MenuItem>
-              <MenuItem icon={<TbDeviceImacQuestion />}>
-                <Link href="/users">
-                  <span>User profile</span>
-                </Link>
-              </MenuItem>
-              <SubMenu label="User menu" icon={<TbDeviceImacQuestion />}>
-                <MenuItem>
-                  <Link href="/add-user">User profile</Link>
-                </MenuItem>
-              </SubMenu>
+            </SubMenu>
 
-              <SubMenu
-                // onClick={() => logout()}
-                label="Log out"
-                icon={<TbDeviceImacQuestion />}
-              ></SubMenu>
-            </Menu>
-          </Sidebar>
+            <SubMenu
+              // onClick={() => logout()}
+              label="Log out"
+              icon={<TbDeviceImacQuestion />}
+            ></SubMenu>
+          </Menu>
+        </Sidebar>
       </div>
       <div
         className={

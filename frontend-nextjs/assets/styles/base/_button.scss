@@ -1,0 +1,19 @@
+@import "./variables";
+
+.primary-btn {
+  padding: 5px 10px;
+  border-radius: $primaryBtnRadius;
+  font-weight: $fontWeightSemiBold;
+  color: $whiteTextColor;
+  font-size: $primaryBtnFontSize;
+  background-color: $primaryBgColor;
+  border-radius: $primaryBtnRadius;
+  font-family: $primaryFont;
+  border: none;
+  line-height: 28px !important;
+  transition: all 0.3s linear;
+  display: inline-block;
+  &:hover {
+    background-color: #59b6f9;
+  }
+}

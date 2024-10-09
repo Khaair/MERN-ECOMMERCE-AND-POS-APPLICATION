@@ -12,6 +12,10 @@ const productsSchema = new Schema({
     type: String,
     required: true,
   },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
   price: {
     type: Number,
     required: true,
@@ -21,6 +25,11 @@ const productsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "category", // Reference to the Category model
     required: true,
+  },
+  subCategory: {
+    type: Schema.Types.ObjectId,
+    ref: "subCategory", // Reference to the Category model
+    required: false,
   },
   brand: String,
   stockQuantity: {

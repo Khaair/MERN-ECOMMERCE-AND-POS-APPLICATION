@@ -10,7 +10,7 @@ const {
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 
-router.get("/show-products", isLoggedIn, showProducts);
+router.get("/show-products", showProducts);
 
 router.post(
 
@@ -21,7 +21,6 @@ router.post(
     check("price").notEmpty().withMessage("price is required"),
     check("category").notEmpty().withMessage("category is required"),
   ],
-  isLoggedIn,
   addProduct,
 
 );
@@ -34,10 +33,9 @@ router.put(
     check("price").notEmpty().withMessage("price is required"),
     check("category").notEmpty().withMessage("category is required"),
   ],
-  isLoggedIn,
   updateProduct
 );
 
-router.delete("/delete-product/:id", isLoggedIn, deleteProduct);
+router.delete("/delete-product/:id", deleteProduct);
 
 module.exports = router;
